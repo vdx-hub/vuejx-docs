@@ -3,20 +3,16 @@
 layout: home
 
 hero:
-  name: "Vuejx???"
-  text: "Vuejx docs"
-  tagline: Make development great again
-  image: /vue.svg
+  name: "My Awesome Project"
+  text: "A VitePress Site"
+  tagline: My great project tagline
   actions:
     - theme: brand
-      text: Components
-      link: /component/
+      text: Markdown Examples
+      link: /markdown-examples
     - theme: alt
-      text: API
-      link: /api/
-    - theme: alt
-      text: Tham gia sửa docs
-      link: /contribute/
+      text: API Examples
+      link: /api-examples
 
 features:
   - title: Feature A

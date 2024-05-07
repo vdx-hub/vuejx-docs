@@ -17,8 +17,8 @@ export default defineConfig({
       copyright: 'Copyright © 2024-present VFlowX'
     },
     sidebar: {
-      '/vuejx/': { base: '/vuejx/', items: sidebarGuide() },
-      '/api/': { base: '/api/', items: sidebarReference() },
+      '/component/': { base: '/component/', items: sidebarVuejx() },
+      '/api/': { base: '/api/', items: sidebarApi() },
       '/contribute/': { base: '/contribute/', items: sidebarContribute() }
     },
     search: {
@@ -31,17 +31,22 @@ export default defineConfig({
     lastUpdatedText: 'Sửa lần cuối',
     outlineTitle: 'Trong trang này',
     logo: { src: '/cave.gif', width: 24, height: 24 },
+    outline: {
+      level: [2, 3]
+    }
   },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/vue.svg' }],
   ],
   markdown: {
     lineNumbers: true,
+
+    toc: { level: [1, 2, 3] },
   },
   lastUpdated: true,
 })
 
-function sidebarGuide(): DefaultTheme.SidebarItem[] {
+function sidebarVuejx(): DefaultTheme.SidebarItem[] {
   return [
     // {
     //   text: 'Introduction',
@@ -90,36 +95,44 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
   ]
 }
 
-function sidebarReference(): DefaultTheme.SidebarItem[] {
+function sidebarApi(): DefaultTheme.SidebarItem[] {
   return [
-    // {
-    //   text: 'Reference',
-    //   items: [
-    //     { text: 'Site Config', link: 'site-config' },
-    //     { text: 'Frontmatter Config', link: 'frontmatter-config' },
-    //     { text: 'Runtime API', link: 'runtime-api' },
-    //     { text: 'CLI', link: 'cli' },
-    //     {
-    //       text: 'Default Theme',
-    //       base: '/reference/default-theme-',
-    //       items: [
-    //         { text: 'Overview', link: 'config' },
-    //         { text: 'Nav', link: 'nav' },
-    //         { text: 'Sidebar', link: 'sidebar' },
-    //         { text: 'Home Page', link: 'home-page' },
-    //         { text: 'Footer', link: 'footer' },
-    //         { text: 'Layout', link: 'layout' },
-    //         { text: 'Badge', link: 'badge' },
-    //         { text: 'Team Page', link: 'team-page' },
-    //         { text: 'Prev / Next Links', link: 'prev-next-links' },
-    //         { text: 'Edit Link', link: 'edit-link' },
-    //         { text: 'Last Updated Timestamp', link: 'last-updated' },
-    //         { text: 'Search', link: 'search' },
-    //         { text: 'Carbon Ads', link: 'carbon-ads' }
-    //       ]
-    //     }
-    //   ]
-    // }
+    {
+      text: 'API',
+      items: [
+        {
+          text: 'Frontend-Browser', link: 'frontend', items: [
+            { text: 'MongoDB', link: 'frontend#mongodb' },
+            { text: 'Elastic', link: 'frontend#elasticsearch' },
+            { text: 'Utils', link: 'frontend#utils' },
+          ]
+        },
+        {
+          text: 'Backend', link: 'backend', items: [
+            { text: 'Vuejx', link: 'backend#vuejx' },
+          ]
+        },
+        // {
+        //   text: 'Default Theme',
+        //   base: '/reference/default-theme-',
+        //   items: [
+        //     { text: 'Overview', link: 'config' },
+        //     { text: 'Nav', link: 'nav' },
+        //     { text: 'Sidebar', link: 'sidebar' },
+        //     { text: 'Home Page', link: 'home-page' },
+        //     { text: 'Footer', link: 'footer' },
+        //     { text: 'Layout', link: 'layout' },
+        //     { text: 'Badge', link: 'badge' },
+        //     { text: 'Team Page', link: 'team-page' },
+        //     { text: 'Prev / Next Links', link: 'prev-next-links' },
+        //     { text: 'Edit Link', link: 'edit-link' },
+        //     { text: 'Last Updated Timestamp', link: 'last-updated' },
+        //     { text: 'Search', link: 'search' },
+        //     { text: 'Carbon Ads', link: 'carbon-ads' }
+        //   ]
+        // }
+      ]
+    }
   ]
 }
 function sidebarContribute(): DefaultTheme.SidebarItem[] {
@@ -138,19 +151,31 @@ function sidebarContribute(): DefaultTheme.SidebarItem[] {
 function nav() {
   return [
     { text: 'Home', link: '/' },
-    { text: 'Vuejx', link: '/vuejx/', activeMatch: '/vuejx/' },
-    { text: 'Api', link: '/api/', activeMatch: '/api/' },
+    { text: 'Component', link: '/component/', activeMatch: '/component/' },
+    {
+      text: 'Api', activeMatch: '/api/',
+      items: [
+        {
+          text: 'Frontend',
+          link: '/api/frontend'
+        },
+        {
+          text: 'Backend',
+          link: '/api/backend'
+        },
+      ]
+    },
     { text: 'Contribute', link: '/contribute/', activeMatch: '/contribute/' },
     {
       text: pkg.version,
       items: [
         {
           text: 'Changelog',
-          link: 'https://github.com/vdx-hub/vuejx-docs/blob/main/CHANGELOG.md'
+          link: 'https://github.com/vdx-hub/vuejx-docs/blob/master/CHANGELOG.md'
         },
         {
           text: 'Contributing',
-          link: 'https://github.com/vdx-hub/vuejx-docs/blob/main/.github/contributing.md'
+          link: 'https://github.com/vdx-hub/vuejx-docs/blob/master/.github/contributing.md'
         }
       ]
     },
