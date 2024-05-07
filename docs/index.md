@@ -3,17 +3,17 @@
 layout: home
 
 hero:
-  name: "Vuejx demystify"
+  name: "Vuejx???"
   text: "Vuejx docs"
   tagline: Make development great again
   image: /vue.svg
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Components
+      link: /vuejx/
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: API
+      link: /api/
 
 features:
   - title: Feature A
