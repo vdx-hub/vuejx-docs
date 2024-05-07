@@ -18,7 +18,8 @@ export default defineConfig({
     },
     sidebar: {
       '/vuejx/': { base: '/vuejx/', items: sidebarGuide() },
-      '/api/': { base: '/api/', items: sidebarReference() }
+      '/api/': { base: '/api/', items: sidebarReference() },
+      '/contribute/': { base: '/contribute/', items: sidebarContribute() }
     },
     search: {
       provider: 'local'
@@ -121,12 +122,38 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
     // }
   ]
 }
+function sidebarContribute(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: 'Contribute',
+      base: '/contribute/',
+      items: [
+        { text: 'Markdown sample', link: 'markdown-examples' },
+        { text: 'API sample', link: 'api-examples' },
+      ]
+    }
+  ]
+}
 
 function nav() {
   return [
     { text: 'Home', link: '/' },
-    { text: 'Vuejx', link: '/vuejx/' },
-    { text: 'Api', link: '/api/' },
+    { text: 'Vuejx', link: '/vuejx/', activeMatch: '/vuejx/' },
+    { text: 'Api', link: '/api/', activeMatch: '/api/' },
+    { text: 'Contribute', link: '/contribute/', activeMatch: '/contribute/' },
+    {
+      text: pkg.version,
+      items: [
+        {
+          text: 'Changelog',
+          link: 'https://github.com/vdx-hub/vuejx-docs/blob/main/CHANGELOG.md'
+        },
+        {
+          text: 'Contributing',
+          link: 'https://github.com/vdx-hub/vuejx-docs/blob/main/.github/contributing.md'
+        }
+      ]
+    },
     { text: 'About', link: '/about' }
   ]
 }

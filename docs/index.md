@@ -14,6 +14,9 @@ hero:
     - theme: alt
       text: API
       link: /api/
+    - theme: alt
+      text: Tham gia sửa docs
+      link: /contribute/
 
 features:
   - title: Feature A
