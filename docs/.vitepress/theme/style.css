@@ -129,7 +129,7 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
-.container {
+/* .container {
   max-width: unset !important;
 }
 .content {
@@ -141,4 +141,4 @@
 }
 .VPDoc {
   padding: 32px 0 0 !important;
-}
+} */

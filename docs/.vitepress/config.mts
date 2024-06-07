@@ -148,7 +148,7 @@ function sidebarContribute(): DefaultTheme.SidebarItem[] {
   ]
 }
 
-function nav() {
+function nav(): DefaultTheme.NavItem[] {
   return [
     { text: 'Home', link: '/' },
     { text: 'Component', link: '/component/', activeMatch: '/component/' },
@@ -164,6 +164,9 @@ function nav() {
           link: '/api/backend'
         },
       ]
+    },
+    {
+      text: 'Config sheet', activeMatch: '/config/', link: '/config/',
     },
     { text: 'Contribute', link: '/contribute/', activeMatch: '/contribute/' },
     {
