@@ -9,6 +9,7 @@
     "noUnusedLocals": true,
     "resolveJsonModule": true,
     "verbatimModuleSyntax": true,
+    "outDir": "./docs/.vitepress/dist",
     "jsx": "preserve",
     "lib": [
       "esnext",
